@@ -7,7 +7,7 @@ $(document).ready(function() {
             let long = position.coords.longitude;
             let lat = position.coords.latitude;
 
-            const api = 'https://api.openweathermap.org/data/2.5/weather?lat='+lat+'&lon='+long+'&appid=3cb8e36c4588b6e453e62866225dcb2b';
+            const api = 'https://api.openweathermap.org/data/2.5/weather?lat='+lat+'&lon='+long+config.api;
 
             $.getJSON(api, function(data) {
                 let fTemp;
