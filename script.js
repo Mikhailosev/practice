@@ -14,35 +14,28 @@ $(document).ready(function() {
                 let cTemp;
                 let kTemp;
                 let tempSwap=true;
-            let weatherType=data.weather[0].description
-            kTemp=data.main.temp;
-            let windSpeed=data.wind.speed;
-            let city=data.name;
-            fTemp=(kTemp*(9/5)-459.67).toFixed(1);
-            cTemp=(kTemp-273).toFixed(1);
-                /*
-            alert(data.coord.lon);*/
+                let weatherType=data.weather[0].description
+                kTemp=data.main.temp;
+                let windSpeed=data.wind.speed;
+                let city=data.name;
+                fTemp=(kTemp*(9/5)-459.67).toFixed(1);
+                cTemp=(kTemp-273).toFixed(1);
             console.log(city);
             $('#city').html(city);
             $('#weatherType').html(weatherType);
             $('#fTemp').html(fTemp+" &deg;F");
-              $('#fTemp').click(function(){
+            $('#fTemp').click(function(){
                 if(tempSwap===false){
                     $('#fTemp').html(cTemp+" &deg;C");
-                     tempSwap=true;
+                    tempSwap=true;
                 }
                 else{
-                  $('#fTemp').html(fTemp+" &deg;F");
-                  tempSwap=false;
+                $('#fTemp').html(fTemp+" &deg;F");
+                tempSwap=false;
                 }
-              });
-              
-              
+            });
             $('#windSpeed').html(windSpeed+" m/s");
-
-                
-              
             });
         });
-    }    
+    }
 });
